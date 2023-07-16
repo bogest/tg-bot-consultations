@@ -103,7 +103,7 @@ async def accepting_question(call: types.CallbackQuery):
         question_from_user = question_data[2]
         channel_for_post = db.get_question_channel_id(question_channel)[0]
         bot_url = hlink('боту', 'https://t.me/voprosc_bot')
-        data = await bot.send_message(channel_for_post, f'<b>{question_text}</b>\n\n🤖'
+        data = await bot.send_message(channel_for_post, f'<i>{question_text}</i>\n\n🤖'
                                                         f'<b>Напиши свой вопрос {bot_url}, текст выделится сам</b>',
                                                         parse_mode='HTML')
         await bot.send_message(question_from_user, '<b>Ваш вопрос успешно выложен!</b>\n\n'
